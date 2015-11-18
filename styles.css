@@ -8,6 +8,8 @@
 
 .shutter {
     position: relative;
+    display: inline-block;
+    left: 100px;
     width: 100px;
     height: 100px;
     background-color: green;
