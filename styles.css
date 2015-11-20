@@ -4,18 +4,22 @@
     right: 20px;
     top: 20px;
     bottom: 20px;
-    background-color: lightgreen;
+    background-color: royalblue;
     padding: 20px;
+    overflow: hidden;
 }
 
 .shutter {
     position: relative;
     display: inline-block;
-    width: 100px;
-    height: 100px;
-    background-color: green;
+    width: 80px;
+    height: 80px;
+    background-color: darkblue;
     margin: 20px;
-    font-size: large;
-    color: white;
     padding: 10px;
+    font-family: 'Sniglet', cursive;
+    font-weight: 800;
+    font-size: 60px;
+    color: royalblue;
+    cursor: pointer;
 }
