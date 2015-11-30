@@ -3,32 +3,48 @@
  */
 function parland_main() {
 
-    $(this).attr("data", $(this).html());
+    //$(this).attr("data", $(this).html());
     var y = $(this).offset().top;
     var x = $(this).offset().left;
-    //var w = $(this).css("width");
     var w = getDimension(this, "width");
     var h = getDimension(this, "height");
-    var dialog = $("<div>").attr("id", "dialog").css({
-        zIndex: 2,
-        position: "absolute",
-        top: y,
-        left: x,
-        width: w,
-        height: h,
-        backgroundColor: jQuery.Color($(this), ("backgroundColor"))
-    });
-    $(this).parent().append(dialog);
+    var showRoom = $("<div>").attr("id", "dialog")
+        .css({
+            zIndex: 2,
+            position: "absolute",
+            top: y,
+            left: x,
+            width: w,
+            height: h,
+            backgroundColor: jQuery.Color($(this), ("backgroundColor"))
+        });
+    $(this).parent().append(showRoom);
     $("body").keydown(function (e) {
-        if (e.which === 27)closeFireworks();
+        if (e.which === 27)removeMainShutterDiv();
     });
-    centerWithAnimation(dialog, 50, 100, 500, null);
-    $(dialog).animate({backgroundColor: "rgb(0, 0, 0)"}, 500);
-    fireworks(dialog);
+    centerDivWithAnimation(showRoom, 50, 100, 500, null);
+    $(showRoom).animate({backgroundColor: "rgb(0, 0, 0)"}, 500);
+    $(showRoom).append($('<div>').attr('id', 'landscape_pic')
+        .css({
+            backgroundImage: 'url("assets/pictures/Lonely_House_Landscape.jpg")',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center center',
+            opacity: 0,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0
+        })
+        .delay(1000)
+        .animate({opacity: "1"}, 1000)
+    );
+    $(showRoom).append($("<div>").attr("id", "close").html("X").click(removeMainShutterDiv));
 
-    $(dialog).append($("<div>").attr("id", "close").html("X").click(closeFireworks));
+    startFireworks(showRoom);
 
-    function closeFireworks() {
+    // --------- functions ------------- //
+    function removeMainShutterDiv() {
         $("#dialog").remove();
     }
 
@@ -40,7 +56,7 @@ function parland_main() {
 
     var canvasW, canvasH, canvasT, canvasL;
 
-    function centerWithAnimation(obj, top, left, msec, callback) {
+    function centerDivWithAnimation(obj, top, left, msec, callback) {
         var parent = $(obj).parent();
         var newW = 1 * parent.css("width").substring(0, parent.css("width").length - 2) - 2 * left;
         var newH = 1 * parent.css("height").substring(0, parent.css("height").length - 2) - 2 * top;
@@ -57,10 +73,12 @@ function parland_main() {
         }, msec, callback);
     }
 
-    function fireworks(obj) {
+    function startFireworks(obj) {
         // code by Jack Rugile from http://thecodeplayer.com/
+
         // prepare canvas
-        $(obj).html("<canvas id='canvas'>Canvas is not supported in your browser.</canvas>");
+        $(obj).append($("<canvas>").attr("id", "canvas").html("Canvas is not supported in your browser."));
+
         // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
         // not supported in all browsers though and sometimes needs a prefix, so we need a shim
         window.requestAnimFrame = (function () {
@@ -72,12 +90,12 @@ function parland_main() {
                 };
         })();
 
-        // now we will setup our basic variables for the demo
-        var canvas = document.getElementById('canvas'),
+        // now we will setup our basic variables
+        var canvas = $('#canvas')[0],
             ctx = canvas.getContext('2d'),
         // full screen dimensions
             cw = canvasW,
-            ch = canvasH,
+            ch = canvasH + 100,
         // firework collection
             fireworks = [],
         // particle collection
