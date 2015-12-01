@@ -134,9 +134,6 @@ function backluma_main() {
 			// Score
 			ctx.fillStyle = "rgb(0, 0, 0)";
 			ctx.font = "24px Helvetica";
-			ctx.textAlign = "left";
-			ctx.textBaseline = "top";
-			ctx.marginTop = "50px";
 			ctx.fillText("Presents retrieved: " + monstersCaught, 32, 32);
 		};
 		
