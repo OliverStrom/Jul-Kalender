@@ -20,8 +20,7 @@ function haviamat_main() {
 
     // fylla på innehållet
     newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
-    newDiv.append(document.getElementById("dialog").innerHTML="<p class='cena_text'>I got a Nintendo 64!</p>" +
-        "<div id='john_cena_picture' style='position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-image: url(http://localhost:63342/Jul-Kalender/assets/pictures/john-cenas-christmas.jpg); background-position: 50% 50%; background-repeat: no-repeat;'></div>");
+    newDiv.append();
 
 
 
