@@ -3,13 +3,8 @@
     color: #33ccff;
 }
 
-#canvas {
-    cursor: crosshair;
-    display: block;
-}
-
 .godjulwesteann {
-	margin-top:300px;
+	margin-top:250px;
 	color:#ffffff;
 	font-size:130px;
 }
