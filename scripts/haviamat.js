@@ -1,6 +1,6 @@
 
 function haviamat_main() {
-    //alert($(this).html());
+    alert($(this).html());
 
     // skapa new DIV med klass "closable"
     var newDiv = $("<div>").attr("class", "closable");
@@ -20,7 +20,7 @@ function haviamat_main() {
 
     // fylla på innehållet
     newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
-    newDiv.append();
+    newDiv.append("John Cena whises a Merry X-mas!");
 
 
 
