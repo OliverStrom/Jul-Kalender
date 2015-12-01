@@ -19,7 +19,7 @@ function haviamat_main() {
     });
 
     // fylla på innehållet
-    newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
+    newDiv.html();
     newDiv.append("<p class='john'>Nintendo 64!!!</p>");
 
 
