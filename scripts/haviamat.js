@@ -22,9 +22,7 @@ function haviamat_main() {
     newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
     newDiv.append("John Cena whises a Merry X-mas!");
 
-    document.write('<img src="/*picture_location_(pictures/john_cena_christmas.jpg)*\"')
-    document.getElementById('newDiv')
-
+    bgImage.src = "pictures/john_cena_christmas.jpg";
 
     function closeDiv() {
         $(".closable").remove();
