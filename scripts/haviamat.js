@@ -15,7 +15,7 @@ function haviamat_main() {
         height: "220px",
         color: "white",
         padding: "20px",
-        backgroundImage: 'url(../"assets/pictures/john_cena_christmas.jpg")'
+        backgroundImage: 'url(./"assets/pictures/john_cena_christmas.jpg")'
     });
 
     // fylla på innehållet
