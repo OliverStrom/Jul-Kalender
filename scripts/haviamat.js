@@ -11,18 +11,16 @@ function haviamat_main() {
         position: "absolute",
         top: "100px",
         left: "300px",
-        width: "500px",
-        height: "220px",
+        width: "574px",
+        height: "350px",
         color: "white",
         padding: "20px",
-        backgroundImage: 'url(../"assets/pictures/john_cena_christmas.jpg")'
+        backgroundImage: 'url("assets/pictures/john-cenas-christmas.jpg")'
     });
 
     // fylla på innehållet
     newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
     newDiv.append("John Cena whises a Merry X-mas!");
-
-
 
 
     function closeDiv() {
