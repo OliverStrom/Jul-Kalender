@@ -18,6 +18,9 @@ function haviamat_main() {
         backgroundImage: 'url("assets/pictures/john-cenas-christmas.jpg")'
     });
 
+    delay(1000)
+        .animate({opacity: "1"}, 1000)
+
     // fylla på innehållet
     newDiv.html();
     newDiv.append("<p class='john'>Nintendo 64!!!</p>");
