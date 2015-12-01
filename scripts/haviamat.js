@@ -11,8 +11,8 @@ function haviamat_main() {
         position: "absolute",
         top: "100px",
         left: "300px",
-        width: "604px",
-        height: "398px",
+        width: "574px",
+        height: "350px",
         color: "white",
         padding: "20px",
         backgroundImage: 'url("assets/pictures/john-cenas-christmas.jpg")'
@@ -21,7 +21,7 @@ function haviamat_main() {
     // fylla på innehållet
     newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
     newDiv.append("John Cena whises a Merry X-mas!");
-    
+
 
     function closeDiv() {
         $(".closable").remove();
