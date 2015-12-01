@@ -13,14 +13,14 @@ function haviamat_main() {
         left: "300px",
         width: "560px",
         height: "350px",
-        color: "white",
+        color: "black",
         padding: "20px",
         backgroundImage: 'url("assets/pictures/john-cenas-christmas.jpg")'
     });
 
     // fylla på innehållet
-    newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
-    newDiv.append("John Cena whises a Merry X-mas!");
+    newDiv.html();
+    newDiv.append("<p class='john'>Nintendo 64!!!</p>");
 
 
     function closeDiv() {
