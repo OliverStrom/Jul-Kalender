@@ -11,7 +11,7 @@ function haviamat_main() {
         position: "absolute",
         top: "100px",
         left: "300px",
-        width: "7800px",
+        width: "780px",
         height: "420px",
         color: "black",
         padding: "20px",
