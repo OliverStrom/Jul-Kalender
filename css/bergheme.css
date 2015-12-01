@@ -1,6 +1,6 @@
-#parland {
-    text-shadow: 0 0 24px #00ff00;
-    color: #77ff77;
+#bergheme {
+    text-shadow: 0 0 24px #8F007F;
+    color: #8F007F;
 }
 
 #canvas {
@@ -16,7 +16,7 @@
     position: absolute;
     top: -18px;
     left: -18px;
-    background-color: #cc0000;
+    background-color: #8F007F;
     padding: 3px;
     border-radius: 50%;
     text-align: center;
