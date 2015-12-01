@@ -4,9 +4,13 @@
 }
 
 .godjulwesteann {
-	margin-top:250px;
+	margin-top:200px;
 	color:#ffffff;
-	font-size:130px;
+	font-size:80px;
+    z-index: 3000;
+    float:left;
+    margin-left:10%;
+    text-shadow: 0 0 24px #0000ff;
 }
 
 #closewesteann {
@@ -22,4 +26,8 @@
     text-align: center;
     font-family: 'Sniglet', cursive;
     cursor: not-allowed;
+}
+
+#landscape_picture {
+    z-index:-2000;
 }
