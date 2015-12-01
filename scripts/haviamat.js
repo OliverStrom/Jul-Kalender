@@ -17,7 +17,6 @@ function haviamat_main() {
         padding: "20px",
         backgroundImage: 'url("assets/pictures/john_cena.gif")'
     })
-        .delay(1000)
         .animate({opacity: "1"}, 1000)
     // fylla på innehållet
     newDiv.html();
