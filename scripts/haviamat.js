@@ -20,13 +20,10 @@ function haviamat_main() {
 
     // fylla på innehållet
     newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
-    newDiv.append("Designa och koda din egen lucka. " +
-        "Dvs skriv en <code>.js</code> fil och en <code>.css</code> fil som bestämmer vad luckan ska göra " +
-        "och hur ska den se ut.<br><br>" +
-        'Ladda upp dina filer på GitHub: "Commit Changes" <br>' +
-        'Du ska namnge dina <code>.js</code> och <code>.css</code> filer med din <i>arcadaID</i> ' +
-        'och placera dem i respektive mapp i projektet för att allt ska fungera. <br><br>' +
-        'Titta på modellen <code>persona_4.js</code> eller på min <code>parland.js</code> ');
+    newDiv.append(document.getElementById("dialog").innerHTML="<p class='cena_text'>I got a Nintendo 64!</p>" +
+        "<div id='john_cena_picture' style='position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-image: url(http://localhost:63342/Jul-Kalender/assets/pictures/john-cenas-christmas.jpg); background-position: 50% 50%; background-repeat: no-repeat;'></div>");
+
+
 
 
     function closeDiv() {
