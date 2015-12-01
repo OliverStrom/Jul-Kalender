@@ -73,7 +73,7 @@ function westeann_main() {
 
      	
 document.getElementById("dialog").innerHTML="<p class='godjulwesteann'>GOD JUL!</p>" +
-    "<div id='landscape_picture' style='position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-image: url(http://localhost:63342/Jul-Kalender/assets/pictures/christmas-cookies.jpg); background-position: 50% 50%; background-size: 100%; background-repeat: no-repeat;'></div>"
+    "<div id='landscape_picture' style='position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-image: url(http://localhost:63342/Jul-Kalender/assets/pictures/christmas-cookies.jpg); background-position: 50% 50%; background-size: cover; background-repeat: no-repeat;'></div>"
 	  
     }
 
