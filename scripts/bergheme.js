@@ -1,52 +1,9 @@
 /**
  * Created by bergheme on 12/1/15.
  */
+
+
 function bergheme_main() {
-
-    /*
-    //alert($(this).html());
-
-    // skapa new DIV med klass "closable"
-    var newDiv = $("<div>").attr("class", "closable");
-    // lägg till den nya DIVen till kontainern
-    $("#container").append(newDiv);
-    // formatera
-    newDiv.css({
-        position: "absolute",
-        top: "100px",
-        left: "300px",
-        width: "60%",
-        height: "500px",
-        color: "white",
-        backgroundColor: "#8F007F",
-        fontFamily: 'Arial',
-        padding: "50px"
-    });
-
-    // fylla på innehållet
-    newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
-    newDiv.append("Designa och koda din egen lucka. " +
-        "Dvs skriv en <code>.js</code> fil och en <code>.css</code> fil som bestämmer vad luckan ska göra " +
-        "och hur ska den se ut.<br><br>" +
-        'Ladda upp dina filer på GitHub: "Commit Changes" <br>' +
-        'Du ska namnge dina <code>.js</code> och <code>.css</code> filer med din <i>arcadaID</i> ' +
-        'och placera dem i respektive mapp i projektet för att allt ska fungera. <br><br>' +
-        'Titta på modellen <code>persona_4.js</code> eller på min <code>parland.js</code> ');
-
-
-    function closeDiv() {
-        $(".closable").remove();
-    }
-
-    // koppla till avstägningsfunktion
-    $("body").keydown(function (e) {
-        if (e.which === 27)closeDiv();
-    });
-
-    // skapa avstägningsknapp
-    newDiv.append($("<div>").attr("id", "close").html("X").click(closeDiv));
-*/
-
 
     //$(this).attr("data", $(this).html());
     var y = $(this).offset().top;
@@ -60,19 +17,19 @@ function bergheme_main() {
             top: y,
             left: x,
             width: w,
-            height: h,
-            backgroundColor: jQuery.Color($(this), ("backgroundColor"))
+            height: h
+            //backgroundColor: jQuery.Color($(this), ("backgroundColor"))
         });
     $(this).parent().append(showRoom);
     $("body").keydown(function (e) {
         if (e.which === 27)removeMainShutterDiv();
     });
     centerDivWithAnimation(showRoom, 50, 100, 500, null);
-    $(showRoom).animate({backgroundColor: "rgb(57, 0, 50)"}, 500);
+    $(showRoom).animate({opacity: "1"}, 500);
     $(showRoom).append($('<div>').attr('id', 'landscape_pic')
         .css({
-            backgroundImage: 'url("assets/pictures/pic.jpg")',
-            backgroundColor: '#000',
+            backgroundImage: 'url("assets/pictures/old_paper_texture_.png")',
+            /*backgroundColor: '#000',*/
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
             opacity: 0,
@@ -80,12 +37,39 @@ function bergheme_main() {
             top: 0,
             left: 0,
             right: 0,
-            bottom: 0
+            bottom: 0,
+            padding: 80,
+            fontFamily: '"Cookie", cursive',
+            fontSize: '16px',
+            color: '#000'
         })
         .delay(1000)
         .animate({opacity: "1"}, 1000)
+        .append('A Christmas Wish<br><br>' +
+            'I\'d like a stocking made for a giant,<br>' +
+            'And a meeting house full of toys,<br>' +
+            'Then I\'d go out in a happy hunt<br>' +
+            'For the poor little girls and boys;<br>' +
+            'Up the street and down the street,<br>' +
+            'And across and over the town,<br>' +
+            "I'd search and find them everyone,<br>" +
+            'Before the sun went down.<br><br>' +
+            'Written by Eugene Field')
     );
     $(showRoom).append($("<div>").attr("id", "close").html("X").click(removeMainShutterDiv));
+
+    //$(showRoom).append($("<div>").css(
+    //    {
+    //        position: 'absolute',
+    //        top: 150,
+    //        left: 400,
+    //        width: 400,
+    //        height: 600,
+    //        color: '#fff',
+    //        fontFamily: '"Courier New", Courier, monospace',
+    //        fontSize: '14px'
+    //    }
+    //)
 
     startFireworks(showRoom);
 
@@ -115,8 +99,8 @@ function bergheme_main() {
         $(obj).animate({
             top: top + "px",
             left: left + "px",
-            width: newW + "px",
-            height: newH + "px"
+            width: 600 + "px",
+            height: 484 + "px"
         }, msec, callback);
     }
 
