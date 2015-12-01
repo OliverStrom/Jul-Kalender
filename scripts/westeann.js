@@ -72,8 +72,7 @@ function westeann_main() {
         })();
 
      	
-document.getElementById("dialog").innerHTML="<p class='godjulwesteann'>GOD JUL!</p>  " +
-    "<img src='../tomten.png' alt='Smiley face'> ";
+document.getElementById("dialog").innerHTML="<p class='godjulwesteann'>GOD JUL!</p> ";
 	  
     }
 
