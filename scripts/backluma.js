@@ -136,7 +136,7 @@ function backluma_main() {
 			ctx.font = "24px Helvetica";
 			ctx.textAlign = "left";
 			ctx.textBaseline = "top";
-			ctx.margin = "50px 50px 50px 50px";
+			ctx.margin = "50px, 50px, 50px, 50px";
 			ctx.fillText("Presents retrieved: " + monstersCaught, 32, 32);
 		};
 		
