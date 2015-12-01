@@ -6,8 +6,10 @@
 .godjulwesteann {
 	margin-top:200px;
 	color:#ffffff;
-	font-size:130px;
+	font-size:100px;
     z-index: 3000;
+    float:left;
+    margin-left:70px;
 }
 
 #closewesteann {
