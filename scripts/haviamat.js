@@ -18,7 +18,7 @@ function haviamat_main() {
         backgroundImage: 'url("assets/pictures/john-cenas-christmas.jpg")'
     });
 
-    
+
 
     // fylla på innehållet
     newDiv.html();
