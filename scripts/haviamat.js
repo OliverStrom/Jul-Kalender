@@ -11,8 +11,8 @@ function haviamat_main() {
         position: "absolute",
         top: "100px",
         left: "300px",
-        width: "800px",
-        height: "450px",
+        width: "7800px",
+        height: "420px",
         color: "black",
         padding: "20px",
         backgroundImage: 'url("assets/pictures/john_cena.gif")'
