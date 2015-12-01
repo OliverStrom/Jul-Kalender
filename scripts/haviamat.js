@@ -18,7 +18,7 @@ function haviamat_main() {
         backgroundImage: 'url("assets/pictures/john_cena.gif")'
     })
         .delay(1000)
-        .animate({opacity: "1"}, 1000);
+        .animate({opacity: "1"}, 1000)
     // fylla på innehållet
     newDiv.html();
     newDiv.append("<p class='john'>Merry X-mas from John Cena!!!</p>");
