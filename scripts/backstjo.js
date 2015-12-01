@@ -2,7 +2,7 @@
  cursor trailer script by Brian Caputo (bcaputo@icdc.com) distributed
  by Hypergurl
  (Hypergurl) Do not remove this copyright information! */
-B = document.all;
+/*B = document.all;
 C = document.layers;
 T1 = new Array("speedingsanta.gif", 50, 50, "speedingsanta.gif", 50, 50, "speedingsanta.gif", 50, 50, "speedingsanta.gif", 50, 50, "speedingsanta.gif", 50, 50, "speedingsanta.gif", 50, 50)
 nos = parseInt(T1.length / 3)
@@ -57,4 +57,4 @@ function newPos(e) {
 }
 if (document.layers) document.captureEvents(Event.MOUSEMOVE)
 document.onmousemove = newPos
-setInterval("cycle()", rate)
+setInterval("cycle()", rate)*/
