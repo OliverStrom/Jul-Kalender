@@ -1,6 +1,6 @@
 
 function haviamat_main() {
-    alert($(this).html());
+    //alert($(this).html());
 
     // skapa new DIV med klass "closable"
     var newDiv = $("<div>").attr("class", "closable");
