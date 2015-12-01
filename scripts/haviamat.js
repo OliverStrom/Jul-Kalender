@@ -13,7 +13,7 @@ function haviamat_main() {
         left: "300px",
         width: "560px",
         height: "350px",
-        color: "white",
+        color: "black",
         padding: "20px",
         backgroundImage: 'url("assets/pictures/john-cenas-christmas.jpg")'
     });
