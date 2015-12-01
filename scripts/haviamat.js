@@ -20,7 +20,7 @@ function haviamat_main() {
 
     // fylla på innehållet
     newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
-    newDiv.append();
+    newDiv.append("John Cena whises a Merry X-mas!");
 
 
 
