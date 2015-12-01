@@ -15,12 +15,12 @@ function haviamat_main() {
         height: "350px",
         color: "black",
         padding: "20px",
-        backgroundImage: 'url("assets/pictures/john-cena.gif")'
+        backgroundImage: 'url("assets/pictures/john_cena.gif")'
     });
 
     // fylla på innehållet
     newDiv.html();
-    newDiv.append("<p class='john'>Nintendo 64!!!</p>");
+    newDiv.append("<p class='john'>Merry X-mas from John Cena!!!</p>");
 
 
     function closeDiv() {
