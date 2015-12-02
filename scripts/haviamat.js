@@ -16,8 +16,8 @@ function haviamat_main() {
         color: "black",
         padding: "20px",
         backgroundImage: 'url("assets/pictures/john_cena.gif")'
-    })
-        .animate({opacity: "1"}, 1000)
+    });
+
     // fylla på innehållet
     newDiv.html();
     newDiv.append("<p class='john'>Merry X-mas from John Cena!!!</p>");
@@ -34,4 +34,6 @@ function haviamat_main() {
 
     // skapa avstägningsknapp
     newDiv.append($("<div>").attr("id", "close").html("X").click(closeDiv));
+
+    
 }
