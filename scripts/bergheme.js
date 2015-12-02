@@ -71,7 +71,7 @@ function bergheme_main() {
     //    }
     //)
 
-    startFireworks(showRoom);
+    //startFireworks(showRoom);
 
     // --------- functions ------------- //
     function removeMainShutterDiv() {

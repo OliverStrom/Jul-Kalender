@@ -1,6 +1,6 @@
 #bergheme {
-    text-shadow: 0 0 24px #8F007F;
-    color: #8F007F;
+    text-shadow: 0 0 24px #f4d;
+    color: #dd88bb;
 }
 
 #canvas {
@@ -16,7 +16,7 @@
     position: absolute;
     top: -18px;
     left: -18px;
-    background-color: #8F007F;
+    /*background-color: #8F007F;*/
     padding: 3px;
     border-radius: 50%;
     text-align: center;
