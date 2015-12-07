@@ -14,7 +14,7 @@ function sjoberra_main() {
             left: x,
             width: w,
             height: h,
-            backgroundColor: jQuery.Color($(this), ("backgroundColor"))
+           backgroundColor: "red",
         });
     $(this).parent().append(showRoom);
     $("body").keydown(function (e) {
