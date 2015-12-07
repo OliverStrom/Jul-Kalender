@@ -24,7 +24,7 @@ function sjoberra_main() {
     $(showRoom).animate({backgroundColor: "rgb(0, 0, 0)"}, 500);
     $(showRoom).append($('<div>').attr('id', 'landscape_pic')
         .css({
-            backgroundImage: 'url("assets/pictures/riku.jpg")',
+            backgroundImage: 'url("assets/pictures/pratka.jpg")',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
             opacity: 0,
