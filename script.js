@@ -23,6 +23,7 @@ $(document).ready(function () {
         "stromjoe",
         "stromoli",
         "westeann",
+		"westeann-2"
         "persona_1",
         "persona_2",
         "persona_3",
