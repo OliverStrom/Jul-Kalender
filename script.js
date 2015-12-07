@@ -31,7 +31,7 @@ $(document).ready(function () {
     studentID = shuffle(studentID);
     console.log(studentID.length);
     function newShutter(paramX, paramY, authorID) {
-        var newDiv = $('<div>').addClass("shutter").attr("id", authorID);
+        var newDiv = $('<div>').addClass("shutter").attr("id", authorID).attr("title",authorID);
         loadCustomCss(authorID);
         loadAndExecuteStudentScript(newDiv);
         return newDiv.css({top: paramY + "px", left: paramX + "px"});
