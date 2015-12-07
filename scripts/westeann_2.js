@@ -37,19 +37,20 @@ function westeann_2_main (){
                         left: "0px",
                         top: "0px",
                         position: "absolute",
-                        height:"760",
-                        width:"560"
+                        height:"560",
+                        width:"960"
             })))
-            .append($('<div>')
+            .append($('<div id="jul">')
                 .css({
+						fontFamily:"Helvetica",
                         position:"absolute",
-                        fontSize:"100px",
-                        fontWeight: "600",
+                        fontSize:"50px",
+                        fontWeight: "400",
                         zOrder: "10",
-                        left:"60px",
-                        top: "250px"
+                        left:"20%",
+                        top: "30%"
                     })
-                .append("God Jul!")
+                .append("Sommaren är kort..</br> Det mesta regnar bort...</br> GOD JUL!")
             )
     }
     $(this) 
@@ -57,7 +58,7 @@ function westeann_2_main (){
         .append( 
             window.ClosableDiv.init(getDivStructure()) 
                 .css({
-                    height:"420",
+                    height:"220",
                     width:"520",
                     backgroundColor:"rgba(0, 0, 50, 0.1)"
                 }) 
