@@ -14,7 +14,7 @@ function ristanij_main() {
         top: "100px",
         left: "300px",
         width: "500px",
-        height: "220px",
+        height: "450px",
         color: "white",
         backgroundColor: "green",
         padding: "20px"
@@ -23,7 +23,7 @@ function ristanij_main() {
     // fylla på innehållet
     newDiv.html("GOOOOOOD JUUUUUUUL! " + $(this).html() + " december.<br><br>");
     newDiv.append("HOOOO HOOOO FINNS DET NÅ SNÄLLA BARN ?? Vill du se något häftigt? Spana in länken! <br><br>");
-	newDiv.append("http://www.miniclip.com/games/sugar-sugar-xmas/en/" );
+	newDiv.append('<iframe width="420" height="315" src="https://www.youtube.com/embed/5ajychXZVyI" frameborder="0" allowfullscreen></iframe>' );
 	
 
     function closeDiv() {
