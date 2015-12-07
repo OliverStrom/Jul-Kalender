@@ -46,6 +46,7 @@ function RainyDay(options, canvas) {
 	// prepare canvas elements
 	this.canvas = canvas || this.prepareCanvas();
 	this.prepareBackground();
+	this.prepareText();
 	this.prepareGlass();
 
 	// assume defaults
@@ -168,6 +169,39 @@ RainyDay.prototype.prepareGlass = function() {
 	this.context = this.glass.getContext('2d');
 };
 
+function drawString(ctx, text, posX, posY, textColor, rotation, font, fontSize) {
+	console.log('Hello drawing')
+	var lines = text.split("\n");
+	if (!rotation) rotation = 0;
+	if (!font) font = "'serif'";
+	if (!fontSize) fontSize = 16;
+	if (!textColor) textColor = '#000000';
+	ctx.save();
+	ctx.font = fontSize + "px " + font;
+	ctx.fillStyle = textColor;
+	ctx.translate(posX, posY);
+	ctx.rotate(rotation * Math.PI / 180);
+	for (i = 0; i < lines.length; i++) {
+ 		ctx.fillText(lines[i],0, i*fontSize);
+	}
+	ctx.restore();
+}
+
+/**
+ * Create the glass canvas TEXT.
+ */
+RainyDay.prototype.prepareText = function() {
+	this.text = document.createElement('canvas');
+	this.text.width = this.canvas.width;
+	this.text.height = this.canvas.height;
+	this.context = this.text.getContext('2d');
+	if(window.rainyText){
+		this.context.font="italic 32px Cookie";
+		//this.context.strokeText(window.rainyText, 50, 50);
+		drawString(this.context, window.rainyText, 140, 70, '#000000', 0, 'Cookie', 32);
+	}
+};
+
 /**
  * Main function for starting rain rendering.
  * @param presets list of presets to be applied
@@ -244,7 +278,9 @@ RainyDay.prototype.rain = function(presets, speed) {
 		}
 		context.save();
 		context.globalAlpha = this.options.opacity;
-		context.drawImage(this.glass, 0, 0, this.canvas.width, this.canvas.height);
+		console.log('this.glass: ' + this.glass)
+		context.drawImage(this.text, window.glassX?window.glassX:0, window.glassY?window.glassY:0, window.glassW?window.glassW:this.canvas.width, window.glassH?window.glassH:this.canvas.height);
+		context.drawImage(this.glass, window.glassX?window.glassX:0, window.glassY?window.glassY:0, window.glassW?window.glassW:this.canvas.width, window.glassH?window.glassH:this.canvas.height);
 		context.restore();
 	}
 		.bind(this);
