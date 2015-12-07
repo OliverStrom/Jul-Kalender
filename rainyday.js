@@ -169,26 +169,33 @@ RainyDay.prototype.prepareGlass = function() {
 	this.context = this.glass.getContext('2d');
 };
 
-function drawString(ctx, text, posX, posY, textColor, rotation, font, fontSize) {
-	console.log('Hello drawing')
+// "italic small-caps bold 12px arial";
+function drawString(ctx, text, posX, posY, rotation, font, textColor) {
 	var lines = text.split("\n");
 	if (!rotation) rotation = 0;
-	if (!font) font = "'serif'";
-	if (!fontSize) fontSize = 16;
-	if (!textColor) textColor = '#000000';
+	if (!font.fontFamily) font.fontFamily = "sans-serif";
+	if (!font.fontSize) font.fontSize = 16;
+	if (!font.fontStyle) font.fontStyle = 'normal';
+	if (!font.fontWeight) font.fontWeight = 'normal';
+	if (!font.fontVariant) font.fontVariant = 'normal';
+    if (!textColor) textColor = '#000000';
 	ctx.save();
-	ctx.font = fontSize + "px " + font;
+	ctx.font = font.fontStyle  + " "
+            + font.fontVariant + " "
+            + font.fontWeight + " "
+            + font.fontSize + "px "
+            + font.fontFamily;
 	ctx.fillStyle = textColor;
 	ctx.translate(posX, posY);
 	ctx.rotate(rotation * Math.PI / 180);
-	for (i = 0; i < lines.length; i++) {
- 		ctx.fillText(lines[i],0, i*fontSize);
+	for (var i = 0; i < lines.length; i++) {
+ 		ctx.fillText(lines[i],0, i*font.fontSize);
 	}
 	ctx.restore();
 }
 
 /**
- * Create the glass canvas TEXT.
+ * Create the TEXT canvas.
  */
 RainyDay.prototype.prepareText = function() {
 	this.text = document.createElement('canvas');
@@ -196,9 +203,9 @@ RainyDay.prototype.prepareText = function() {
 	this.text.height = this.canvas.height;
 	this.context = this.text.getContext('2d');
 	if(window.rainyText){
-		this.context.font="italic 32px Cookie";
-		//this.context.strokeText(window.rainyText, 50, 50);
-		drawString(this.context, window.rainyText, 140, 70, '#000000', 0, 'Cookie', 32);
+		//this.context.font="italic 32px Cookie";
+		var rt=window.rainyText;
+		drawString(this.context, rt.txt, rt.x, rt.y, rt.rotation, rt.font, rt.color);
 	}
 };
 
@@ -242,9 +249,9 @@ RainyDay.prototype.rain = function(presets, speed) {
 		}
 	}
 
-	for (var i = 0; i < presets.length; i++) {
-		if (!presets[i][3]) {
-			presets[i][3] = -1;
+	for (var j = 0; j < presets.length; j++) {
+		if (!presets[j][3]) {
+			presets[j][3] = -1;
 		}
 	}
 
@@ -278,9 +285,9 @@ RainyDay.prototype.rain = function(presets, speed) {
 		}
 		context.save();
 		context.globalAlpha = this.options.opacity;
-		console.log('this.glass: ' + this.glass)
-		context.drawImage(this.text, window.glassX?window.glassX:0, window.glassY?window.glassY:0, window.glassW?window.glassW:this.canvas.width, window.glassH?window.glassH:this.canvas.height);
-		context.drawImage(this.glass, window.glassX?window.glassX:0, window.glassY?window.glassY:0, window.glassW?window.glassW:this.canvas.width, window.glassH?window.glassH:this.canvas.height);
+        var gl = window.glass;
+		context.drawImage(this.text, gl?gl.x:0, gl?gl.y:0, gl?gl.w:this.canvas.width, gl?gl.h:this.canvas.height);
+		context.drawImage(this.glass, gl?gl.x:0, gl?gl.y:0, gl?gl.w:this.canvas.width, gl?gl.h:this.canvas.height);
 		context.restore();
 	}
 		.bind(this);
@@ -492,7 +499,7 @@ RainyDay.prototype.GRAVITY_NON_LINEAR = function(drop) {
 		drop.slowing = false;
 	} else if (!drop.seed || drop.seed < 0) {
 		drop.seed = Math.floor(drop.r * Math.random() * this.options.fps);
-		drop.skipping = drop.skipping === false ? true : false;
+		drop.skipping = drop.skipping === false;
 		drop.slowing = true;
 	}
 
