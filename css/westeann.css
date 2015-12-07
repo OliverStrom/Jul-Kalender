@@ -4,12 +4,13 @@
 }
 
 .godjulwesteann {
-	margin-top:200px;
+	display:block;
+	margin-top:150px;
 	color:#ffffff;
 	font-size:80px;
     z-index: 3000;
-    float:left;
     margin-left:10%;
+	max-width:310px;
     text-shadow: 0 0 24px #0000ff;
 }
 
@@ -31,3 +32,11 @@
 #landscape_picture {
     z-index:-2000;
 }
+
+.newDivz {
+	max-width:300px;
+	display:block;
+	margin-left:10%;
+        color: #fff;
+		font-size : 20px;
+		 }

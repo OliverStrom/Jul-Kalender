@@ -3,6 +3,8 @@
  Edited by westeann
  */
 function westeann_main() {
+	
+
 
     $(this).attr("data", $(this).html());
     var y = $(this).offset().top;
@@ -63,6 +65,7 @@ function westeann_main() {
         $(obj).html("<canvas id='canvas'>Canvas is not supported in your browser.</canvas>");
         // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
         // not supported in all browsers though and sometimes needs a prefix, so we need a shim
+		
         window.requestAnimFrame = (function () {
             return window.requestAnimationFrame ||
                 window.webkitRequestAnimationFrame ||
@@ -73,12 +76,30 @@ function westeann_main() {
         })();
 
 
-        document.getElementById("dialog").innerHTML= "<p class='godjulwesteann'>GOD JUL!</p>" +
+        document.getElementById("dialog").innerHTML= "<p class='newDivz'> Detta är lucka för den <script>echo.(this).html()</script> december.</p>" + "<p class='godjulwesteann'>GOD JUL!</p>" + 
     "<div id='landscape_picture' style='position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-image: url(assets/pictures/christmas-cookies.jpg); background-position: 00% 50%; background-size: cover; background-repeat: no-repeat;'></div>"
 	  
     }
 
-
+	var engine = new RainyDayaw({
+    image: landscape_picture,         // Image element
+                            // This value is required
+    parentElement: dialog, // Element to be used as a parent for the canvas
+                            // If not provided assuming the 'body' element
+    crop: [0, 0, 50, 60],   // Coordinates if only a part of the image should be used
+                            // If not provided entire image will be used
+    blur: 10,               // Defines blur due to rain effect
+                            // Assuming 10 if not provided
+                            // Use 0 value to disable the blur
+    opacity: 1              // Opacity of rain drops
+                            // Assuming 1 if not provided
+		});
+		engine.rain(
+			[
+				[1, 0, 20],         // add 20 drops of size 1...
+				[3, 3, 1]           // ... and 1 drop of size from 3 - 6 ...
+			],                       
+			100);                   // ... every 100ms
 	
 	
 }
