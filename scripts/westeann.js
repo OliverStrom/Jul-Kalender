@@ -23,7 +23,7 @@ function westeann_main() {
     $("body").keydown(function (e) {
         if (e.which === 27)closeStuffhappens();
     });
-    centerWithAnimation(dialog, 50, 250, 500, null);
+    centerWithAnimation(dialog, 50, 50, 500, null);
     $(dialog).animate({backgroundColor: "rgb(0, 0, 0)"}, 500);
     Stuffhappens(dialog);
 
@@ -74,9 +74,11 @@ function westeann_main() {
 
 
         document.getElementById("dialog").innerHTML= "<p class='godjulwesteann'>GOD JUL!</p>" +
-    "<div id='landscape_picture' style='position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-image: url(assets/pictures/christmas-cookies.jpg); background-position: 50% 50%; background-size: cover; background-repeat: no-repeat;'></div>"
+    "<div id='landscape_picture' style='position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-image: url(assets/pictures/christmas-cookies.jpg); background-position: 00% 50%; background-size: cover; background-repeat: no-repeat;'></div>"
 	  
     }
 
+
+	
 	
 }
