@@ -8,16 +8,15 @@ function stromoli_main() {
     $("#container").append(newDiv);
     // formatera
     newDiv.css({
-        position: "absolute",
-        top: "100px",
-        left: "300px",
-        maxWidth: "2000px",
-        width: "50%",
-        height: "100%",
+        margin: "0 auto",
+		position:"absolute",
+		bottom:"0%",
+        width: "90%",
+        height: "90%",
         color: "black",
         padding: "20px",
-        backgroundImage: 'url("assets/pictures/snow.gif")',
-        backgroundRepeat: "no-repeat"
+		background: "red"
+
     });
 
     // fylla på innehållet
