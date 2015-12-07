@@ -15,7 +15,8 @@ function stromoli_main() {
         height: "90%",
         color: "black",
         padding: "20px",
-		background: "red"
+		backgroundImage: "url(assets/pictures/yey.jpg)",
+		backgroundSize: "cover"
 
     });
 
