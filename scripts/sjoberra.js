@@ -66,8 +66,8 @@ function sjoberra_main() {
         $(obj).animate({
             top: top + "px",
             left: left + "px",
-            width: 450 + "px",
-            height: 450 + "px"
+            width: 550 + "px",
+            height: 368 + "px"
         }, msec, callback);
     }
 
