@@ -2,7 +2,7 @@
  * Created by parland on 11/21/15.
  */
 
-function westeann_main (){
+function westeann-2_main (){
 
 
     function run() {
