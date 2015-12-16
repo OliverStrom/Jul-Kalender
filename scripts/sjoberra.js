@@ -47,7 +47,7 @@ function sjoberra_main (){
                     color:"rgba(255, 255, 255, 0.8)",
                     textShadow: "0 0 14px #000"
                 })
-                .append("Soon it will be Christmas")
+                .append("JULEN E HÄR")
             )
     }
     $(this)
@@ -55,8 +55,8 @@ function sjoberra_main (){
         .append(
             window.ClosableDiv.init(getDivStructure())
                 .css({
-                    height:"368",
-                    width:"550",
+                    height:"420",
+                    width:"520",
                     backgroundColor:"rgba(0, 0, 50, 0.1)"
                 })
         );
