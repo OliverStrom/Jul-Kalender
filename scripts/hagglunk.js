@@ -1,4 +1,4 @@
-function hagglunk_main() {
+function hagglunk_main () {
    
 	 function run() {
         var image = document.getElementById('background');
@@ -60,3 +60,5 @@ function hagglunk_main() {
         );
 
     run();
+
+}
