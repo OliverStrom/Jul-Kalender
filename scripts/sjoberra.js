@@ -15,7 +15,7 @@ function sjoberra_main (){
             engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
         };
         image.crossOrigin = 'anonymous';
-        image.src = 'assets/pictures/machinegun.jpg';
+        image.src = 'assets/pictures/pratka11.jpg';
     }
 
 
