@@ -1,21 +1,5 @@
 function hagglunk_main() {
-    //alert($(this).html());
-
-    // skapa new DIV med klass "closable"
-    var newDiv = $("<div>").attr("class", "closable");
-    // lägg till den nya DIVen till kontainern
-    $("#container").append(newDiv);
-    // formatera
-    newDiv.css({
-        position: "absolute",
-        top: "100px",
-        left: "300px",
-        width: "500px",
-        height: "220px",
-        color: "white",
-        backgroundColor: "black",
-        padding: "20px"
-    });
+   
 	 function run() {
         var image = document.getElementById('background');
         image.onload = function() {
@@ -30,7 +14,7 @@ function hagglunk_main() {
             engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
         };
         image.crossOrigin = 'anonymous';
-        image.src = 'assets/pictures/';
+        image.src = 'assets/pictures/jokerit_wall002.jpg';
     }
 
  function getDivStructure(){
@@ -64,17 +48,15 @@ function hagglunk_main() {
                 .append("Merry Christmas wishes from Jokerit Fan Nr1")
             )
     }
+    $(this)
+        .parent()
+        .append(
+            window.ClosableDiv.init(getDivStructure())
+                .css({
+                    height:"420",
+                    width:"520",
+                    backgroundColor:"rgba(0, 0, 50, 0.1)"
+                })
+        );
 
-    function closeDiv() {
-        $(".closable").remove();
-    }
-
-    // koppla till avstägningsfunktion
-    $("body").keydown(function (e) {
-        if (e.which === 27)closeDiv();
-    });
-
-    // skapa avstägningsknapp
-    newDiv.append($("<div>").attr("id", "close").html("X").click(closeDiv));
-}
-run();
+    run();
