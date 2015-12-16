@@ -31,8 +31,8 @@ function hagglunk_main () {
                         left: "0px",
                         top: "0px",
                         position: "absolute",
-                        height:"460",
-                        width:"600"
+                        height:"1920",
+                        width:"1080"
                     })))
             .append($('<div>')
                 .css({
