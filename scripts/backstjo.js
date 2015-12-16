@@ -1,4 +1,4 @@
-//
+
 function backstjo_main() {
     //alert($(this).html());
 
