@@ -1,75 +1,66 @@
+function sjoberra_main (){
 
-function sjoberra_main() {
 
-    //$(this).attr("data", $(this).html());
-    var y = $(this).offset().top;
-    var x = $(this).offset().left;
-    var w = getDimension(this, "width");
-    var h = getDimension(this, "height");
-    var showRoom = $("<div>").attr("id", "dialog")
-        .css({
-            zIndex: 2,
-            position: "absolute",
-            top: y,
-            left: x,
-            width: w,
-            height: h,
-           backgroundColor: "red",
-        });
-    $(this).parent().append(showRoom);
-    $("body").keydown(function (e) {
-        if (e.which === 27)removeMainShutterDiv();
-    });
-    centerDivWithAnimation(showRoom, 50, 100, 500, null);
-    $(showRoom).animate({backgroundColor: "rgb(0, 0, 0)"}, 500);
-    $(showRoom).append($('<div>').attr('id', 'landscape_pic')
-        .css({
-            backgroundImage: 'url("assets/pictures/pratka11.jpg")',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center center',
-            opacity: 0,
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0
-        })
-        .delay(1000)
-        .animate({opacity: "1"}, 1000)
-    );
-    $(showRoom).append($("<div>").attr("id", "close").html("X").click(removeMainShutterDiv));
-
-    startFireworks(showRoom);
-
-    // --------- functions ------------- //
-    function removeMainShutterDiv() {
-        $("#dialog").remove();
+    function run() {
+        var image = document.getElementById('background');
+        image.onload = function() {
+            console.log(this);
+            var engine = new RainyDay({
+                image: this,
+                parentElement: document.getElementById('test'),
+                top: 0,
+                left: 0
+            });
+            engine.rain([ [1, 2, 8000] ]);
+            engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
+        };
+        image.crossOrigin = 'anonymous';
+        image.src = 'assets/pictures/pratka11.jpg';
     }
 
-    function getDimension(obj, dim) {
-        var w = $(obj).css(dim).substring(0, $(obj).css(dim).length - 2);
-        var p = $(obj).css("padding").substring(0, $(obj).css("padding").length - 2);
-        return (1 * w + 2 * p) + "px";
+
+    function getDivStructure(){
+        return $('<div>')
+            .css({
+                opacity:"0"
+            })
+            .animate({
+                opacity:"1"
+            }, 1000)
+            .append($('<div id="test">')
+                .append($('<img id="background"  alt="background" src="" crossorigin="anonymous">')
+                    .css({
+                        left: "0px",
+                        top: "0px",
+                        position: "absolute",
+                        height:"460",
+                        width:"600"
+                    })))
+            .append($('<div>')
+                .css({
+                    position:"absolute",
+                    fontSize:"40px",
+                    fontWeight: "600",
+                    fontFamily:"Helvetica",
+                    zOrder: "10",
+                    top: "380px",
+                    color:"rgba(255, 255, 255, 0.8)",
+                    textShadow: "0 0 14px #000"
+                })
+                .append("Soon it will be Christmas")
+            )
     }
+    $(this)
+        .parent()
+        .append(
+            window.ClosableDiv.init(getDivStructure())
+                .css({
+                    height:"368",
+                    width:"550",
+                    backgroundColor:"rgba(0, 0, 50, 0.1)"
+                })
+        );
 
-    var canvasW, canvasH, canvasT, canvasL;
-
-    function centerDivWithAnimation(obj, top, left, msec, callback) {
-        var parent = $(obj).parent();
-        var newW = 1 * parent.css("width").substring(0, parent.css("width").length - 2) - 2 * left;
-        var newH = 1 * parent.css("height").substring(0, parent.css("height").length - 2) - 2 * top;
-        canvasW = newW;
-        canvasH = newH;
-        var offset = $("#container").offset();
-        canvasT = top + offset.top;
-        canvasL = left + offset.left;
-        $(obj).animate({
-            top: top + "px",
-            left: left + "px",
-            width: 550 + "px",
-            height: 368 + "px"
-        }, msec, callback);
-    }
-
+    run();
 
 }
