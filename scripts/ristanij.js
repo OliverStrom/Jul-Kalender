@@ -26,7 +26,7 @@ function ristanij_main (){
             })
             .animate({
                 opacity:"1"
-            }, 1000)
+            }, 500)
             .append($('<div id="test">')
                 .append($('<img id="background"  alt="background" src="" crossorigin="anonymous">')
                     .css({
@@ -47,7 +47,7 @@ function ristanij_main (){
                     color:"rgba(255, 255, 255, 0.8)",
                     textShadow: "0 0 14px #000"
                 })
-                .append("MERRY X-MAS")
+                .append("MERRY X-MAS AND A HAPPY NEW DEATH STAR")
             )
     }
     $(this)
