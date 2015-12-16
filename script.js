@@ -23,7 +23,8 @@ $(document).ready(function () {
         "stromjoe",
         "stromoli",
         "westeann",
-        "persona_1",
+        "westeann_2",
+        //"persona_1",
         "persona_2",
         "persona_3",
         "persona_4"
@@ -167,5 +168,21 @@ $(document).ready(function () {
 
     createRandomDivs();
 
+    // role a wave on the title
+    var titleLength = $('.title').html().length;
+    typesetting.letters('.title');
+    $('.title').children().css({position: 'relative', top: '5', opacity: 0.6});
+    setInterval(function wave() {
+        for (var i = 1; i <= titleLength; i++) {
+            $('.char' + i).delay(100 * i).animate({
+                opacity: 1
+                , top: '-10px'
+            }).delay(50).animate({
+                opacity: 0.6
+                , top: '5'
+            });
+        }
+        return wave;
+    }(), 5000);
 
 });
