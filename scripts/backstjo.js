@@ -16,7 +16,7 @@ function backstjo_main() {
         height: "100%",
         color: "black",
         padding: "20px",
-        backgroundImage: 'url("assets/pictures/HOL.jpg")',
+        backgroundImage: 'url("assets/images/HOL.jpg")',
         backgroundRepeat: "no-repeat"
     });
 
