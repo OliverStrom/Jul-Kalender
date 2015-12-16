@@ -1,7 +1,5 @@
-/**
- * Created by parland on 11/21/15.
- */
-function persona_4_main() {
+
+function hagglunk_main() {
     //alert($(this).html());
 
     // skapa new DIV med klass "closable"
@@ -19,17 +17,54 @@ function persona_4_main() {
         backgroundColor: "black",
         padding: "20px"
     });
+	 function run() {
+        var image = document.getElementById('background');
+        image.onload = function() {
+            console.log(this);
+            var engine = new RainyDay({
+                image: this,
+                parentElement: document.getElementById('test'),
+                top: 0,
+                left: 0
+            });
+            engine.rain([ [1, 2, 8000] ]);
+            engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
+        };
+        image.crossOrigin = 'anonymous';
+        image.src = 'assets/pictures/';
+    }
 
-    // fylla på innehållet
-    newDiv.html("Detta är lucka för den " + $(this).html() + " december.<br><br>");
-    newDiv.append("Designa och koda din egen lucka. " +
-        "Dvs skriv en <code>.js</code> fil och en <code>.css</code> fil som bestämmer vad luckan ska göra " +
-        "och hur ska den se ut.<br><br>" +
-        'Ladda upp dina filer på GitHub: "Commit Changes" <br>' +
-        'Du ska namnge dina <code>.js</code> och <code>.css</code> filer med din <i>arcadaID</i> ' +
-        'och placera dem i respektive mapp i projektet för att allt ska fungera. <br><br>' +
-        'Titta på modellen <code>persona_4.js</code> eller på min <code>parland.js</code> ');
-
+ function getDivStructure(){
+        return $('<div>')
+            .css({
+                opacity:"0"
+            })
+            .animate({
+                opacity:"1"
+            }, 1000)
+            .append($('<div id="test">')
+                .append($('<img id="background"  alt="background" src="" crossorigin="anonymous">')
+                    .css({
+                        left: "0px",
+                        top: "0px",
+                        position: "absolute",
+                        height:"460",
+                        width:"600"
+                    })))
+            .append($('<div>')
+                .css({
+                    position:"absolute",
+                    fontSize:"40px",
+                    fontWeight: "600",
+                    fontFamily:"Helvetica",
+                    zOrder: "10",
+                    top: "380px",
+                    color:"rgba(255, 255, 255, 0.8)",
+                    textShadow: "0 0 14px #000"
+                })
+                .append("Merry Christmas wishes from Jokerit Fan Nr1")
+            )
+    }
 
     function closeDiv() {
         $(".closable").remove();
@@ -43,3 +78,4 @@ function persona_4_main() {
     // skapa avstägningsknapp
     newDiv.append($("<div>").attr("id", "close").html("X").click(closeDiv));
 }
+run();
