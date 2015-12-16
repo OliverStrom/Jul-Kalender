@@ -63,7 +63,8 @@ function westeann_main (){
                 .css({
                     height:"220",
                     width:"520",
-                    backgroundColor:"rgba(0, 0, 50, 0.1)"
+                    backgroundColor:"rgba(0, 0, 50, 0.1)",
+					left:"10%"
                 }) 
         );
 
