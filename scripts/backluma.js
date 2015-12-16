@@ -131,7 +131,7 @@ function backluma_main() {
 				ctx.drawImage(monsterImage, monster.x, monster.y);
 			}
 		
-			Score
+			//Score
 			ctx.fillStyle = "rgb(0, 0, 0)";
 			ctx.font = "24px Helvetica";
 			ctx.textAlign = "left";
