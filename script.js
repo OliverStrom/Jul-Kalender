@@ -23,6 +23,10 @@ $(document).ready(function () {
         "stromjoe",
         "stromoli",
         "westeann",
+<<<<<<< HEAD
+=======
+        "westeann_2",
+>>>>>>> origin/master
         "persona_1",
         "persona_2",
         "persona_3",
@@ -31,7 +35,7 @@ $(document).ready(function () {
     studentID = shuffle(studentID);
     console.log(studentID.length);
     function newShutter(paramX, paramY, authorID) {
-        var newDiv = $('<div>').addClass("shutter").attr("id", authorID).attr("title",authorID);
+        var newDiv = $('<div>').addClass("shutter").attr("id", authorID).attr("title", authorID);
         loadCustomCss(authorID);
         loadAndExecuteStudentScript(newDiv);
         return newDiv.css({top: paramY + "px", left: paramX + "px"});
@@ -107,9 +111,13 @@ $(document).ready(function () {
     }
 
     window.removeClosables = function () {
+        if (window.cleanUp) {
+            window.cleanUp();
+            window.cleanUp = null;
+        }
         $(".closable").children('canvas').toArray().forEach(cleanCanvas);
         function cleanCanvas(elm) {
-            console.log('cleanCanvas '+elm);
+            console.log('cleanCanvas ' + elm);
             clearInterval(window.animation);
         }
 
@@ -121,10 +129,10 @@ $(document).ready(function () {
 
     window.ClosableDiv = {
         div: null,
-        init: function(obj) {
+        init: function (obj) {
             removeClosables();
-            this.div=null;
-            if(!this.div) {
+            this.div = null;
+            if (!this.div) {
                 this.div = $("<div>")
                     .attr("class", "closable")
                     .css(this.css)
@@ -132,7 +140,7 @@ $(document).ready(function () {
                     .append($("<div>")
                         .attr("id", "close")
                         .html("X").click(removeClosables)
-                        .css({zIndex:"100"})
+                        .css({zIndex: "100"})
                     );
             }
             return this.div;

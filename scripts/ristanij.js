@@ -1,40 +1,66 @@
-/**
- * Created by parland on 11/21/15.
- */
-function ristanij_main() {
-    //alert($(this).html());
+function ristanij_main (){
 
-    // skapa new DIV med klass "closable"
-    var newDiv = $("<div>").attr("class", "closable");
-    // lägg till den nya DIVen till kontainern
-    $("#container").append(newDiv);
-    // formatera
-    newDiv.css({
-        position: "absolute",
-        top: "100px",
-        left: "300px",
-        width: "500px",
-        height: "450px",
-        color: "white",
-        backgroundColor: "green",
-        padding: "20px"
-    });
 
-    // fylla på innehållet
-    newDiv.html("GOOOOOOD JUUUUUUUL! " + $(this).html() + " december.<br><br>");
-    newDiv.append("HOOOO HOOOO FINNS DET NÅ SNÄLLA BARN ?? Vill du se något häftigt? Spana in länken! <br><br>");
-	newDiv.append('<iframe width="420" height="315" src="https://www.youtube.com/embed/5ajychXZVyI" frameborder="0" allowfullscreen></iframe>' );
-	
-
-    function closeDiv() {
-        $(".closable").remove();
+    function run() {
+        var image = document.getElementById('background');
+        image.onload = function() {
+            console.log(this);
+            var engine = new RainyDay({
+                image: this,
+                parentElement: document.getElementById('test'),
+                top: 0,
+                left: 0
+            });
+            engine.rain([ [1, 2, 8000] ]);
+            engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
+        };
+        image.crossOrigin = 'anonymous';
+        image.src = 'assets/pictures/starwars.jpg';
     }
 
-    // koppla till avstägningsfunktion
-    $("body").keydown(function (e) {
-        if (e.which === 27)closeDiv();
-    });
 
-    // skapa avstägningsknapp
-    newDiv.append($("<div>").attr("id", "close").html("X").click(closeDiv));
+    function getDivStructure(){
+        return $('<div>')
+            .css({
+                opacity:"0"
+            })
+            .animate({
+                opacity:"1"
+            }, 1000)
+            .append($('<div id="test">')
+                .append($('<img id="background"  alt="background" src="" crossorigin="anonymous">')
+                    .css({
+                        left: "0px",
+                        top: "0px",
+                        position: "absolute",
+                        height:"460",
+                        width:"600"
+                    })))
+            .append($('<div>')
+                .css({
+                    position:"absolute",
+                    fontSize:"40px",
+                    fontWeight: "600",
+                    fontFamily:"Helvetica",
+                    zOrder: "10",
+                    top: "380px",
+                    color:"rgba(255, 255, 255, 0.8)",
+                    textShadow: "0 0 14px #000"
+                })
+                .append("MERRY X-MAS")
+            )
+    }
+    $(this)
+        .parent()
+        .append(
+            window.ClosableDiv.init(getDivStructure())
+                .css({
+                    height:"420",
+                    width:"520",
+                    backgroundColor:"rgba(0, 0, 50, 0.1)"
+                })
+        );
+
+    run();
+
 }

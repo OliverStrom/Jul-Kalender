@@ -10,13 +10,13 @@ function stromoli_main() {
     newDiv.css({
         margin: "0 auto",
 		position:"absolute",
-		bottom:"0%",
-        width: "90%",
-        height: "90%",
+		bottom:"10%",
+        width: "70%",
+        height: "70%",
         color: "black",
         padding: "20px",
 		backgroundImage: "url(assets/pictures/yey.jpg)",
-		backgroundSize: "cover"
+		backgroundSize: "100%"
 
     });
 
