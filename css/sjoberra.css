@@ -1,18 +1,6 @@
-body {
-	overflow: hidden;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-
-img {
-	width: 100%;
-	height: 100%;
-}
-
-#bergheme {
-    text-shadow: 0 0 24px #8F007F;
-    color: #8F007F;
+#sjoberra {
+    text-shadow: 0 0 24px #00ff00;
+    color: #B4D455;
 }
 
 #canvas {
@@ -28,7 +16,7 @@ img {
     position: absolute;
     top: -18px;
     left: -18px;
-    background-color: #8F007F;
+    background-color: #cc0000;
     padding: 3px;
     border-radius: 50%;
     text-align: center;

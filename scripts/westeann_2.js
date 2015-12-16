@@ -2,11 +2,11 @@
  * Created by parland on 11/21/15.
  */
 
-function glasberj_main (){
+function westeann_2_main (){
 
 
     function run() {
-        var image = document.getElementById('background');
+        var image = document.getElementById('dialog');
         image.onload = function() {
             console.log(this);
             var engine = new RainyDay({
@@ -19,7 +19,7 @@ function glasberj_main (){
             engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
         };
         image.crossOrigin = 'anonymous';
-        image.src = 'assets/pictures/winter.jpg';
+        image.src = 'assets/pictures/christmas-cookies.jpg';
     }
 
 
@@ -32,26 +32,25 @@ function glasberj_main (){
                 opacity:"1"
             }, 1000)
             .append($('<div id="test">')
-                .append($('<img id="background"  alt="background" src="" crossorigin="anonymous">')
+                .append($('<img id="dialog"  alt="background" src="" crossorigin="anonymous">')
                     .css({
                         left: "0px",
                         top: "0px",
                         position: "absolute",
-                        height:"500",
-                        width:"840"
+                        height:"560",
+                        width:"960"
             })))
-            .append($('<div>')
+            .append($('<div id="jul">')
                 .css({
+						fontFamily:"Helvetica",
                         position:"absolute",
-                        fontSize:"90px",
-                        fontWeight: "600",
-						fontFamily: "Lobster",
+                        fontSize:"50px",
+                        fontWeight: "400",
                         zOrder: "10",
-						color: "black",
-						marginTop: "50px"
+                        left:"20%",
+                        top: "30%"
                     })
-                .append("<img src='assets/pictures/lights.gif'>")
-				.append("God Jul(ia)!<br>")
+                .append("Sommaren är kort..</br> Det mesta regnar bort...</br> GOD JUL!")
             )
     }
     $(this) 
@@ -59,7 +58,7 @@ function glasberj_main (){
         .append( 
             window.ClosableDiv.init(getDivStructure()) 
                 .css({
-                    height:"420",
+                    height:"220",
                     width:"520",
                     backgroundColor:"rgba(0, 0, 50, 0.1)"
                 }) 

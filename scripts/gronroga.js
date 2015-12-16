@@ -2,7 +2,7 @@
  * Created by parland on 11/21/15.
  */
 
-function glasberj_main (){
+function gronroga_main (){
 
 
     function run() {
@@ -19,7 +19,7 @@ function glasberj_main (){
             engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
         };
         image.crossOrigin = 'anonymous';
-        image.src = 'assets/pictures/winter.jpg';
+        image.src = 'assets/pictures/fatherski.gif';
     }
 
 
@@ -37,21 +37,21 @@ function glasberj_main (){
                         left: "0px",
                         top: "0px",
                         position: "absolute",
-                        height:"500",
-                        width:"840"
+                        height:"460",
+                        width:"560"
             })))
             .append($('<div>')
                 .css({
                         position:"absolute",
-                        fontSize:"90px",
+                        fontSize:"40px",
                         fontWeight: "600",
-						fontFamily: "Lobster",
                         zOrder: "10",
-						color: "black",
-						marginTop: "50px"
+                        left:"120px",
+                        top: "30px",
+						color:"rgba(255, 255, 255, 1)",
+						fontFamily:"Indie Flower"
                     })
-                .append("<img src='assets/pictures/lights.gif'>")
-				.append("God Jul(ia)!<br>")
+                .append("SE UPP I BACKEN!")
             )
     }
     $(this) 
@@ -61,7 +61,7 @@ function glasberj_main (){
                 .css({
                     height:"420",
                     width:"520",
-                    backgroundColor:"rgba(0, 0, 50, 0.1)"
+                    backgroundColor:"rgba(0, 0, 50, 0.1)" 
                 }) 
         );
 

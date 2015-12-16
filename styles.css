@@ -42,3 +42,13 @@
     font-family: 'Sniglet', cursive;
     cursor: not-allowed
 }
+
+#header {
+    position: absolute;
+    transform: rotate(-90deg);
+    top: 160px;
+    left: -150px;
+    color: #ffF;
+    font-size: 20px;
+    text-align: right;
+}

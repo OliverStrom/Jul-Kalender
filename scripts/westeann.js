@@ -3,6 +3,7 @@
  Edited by westeann
  */
 function westeann_main() {
+	
 
     $(this).attr("data", $(this).html());
     var y = $(this).offset().top;
@@ -20,11 +21,8 @@ function westeann_main() {
         backgroundColor: jQuery.Color($(this), ("backgroundColor"))
     });
     $(this).parent().append(dialog);
-    $("body").keydown(function (e) {
-        if (e.which === 27)closeStuffhappens();
-    });
-    centerWithAnimation(dialog, 50, 250, 500, null);
-    $(dialog).animate({backgroundColor: "rgb(0, 0, 0)"}, 500);
+
+    centerWithAnimation(dialog, 50, 50, 500, null);
     Stuffhappens(dialog);
 
     $(dialog).append($("<div>").attr("id", "closewesteann").html("X").click(closeStuffhappens));
@@ -55,28 +53,22 @@ function westeann_main() {
             height: newH + "px"
         }, msec, callback);
     }
-
+	
+	
+	
+	
+    var newDivz = $("<div>").attr("class", "newDivzz");	
+	$("#dialog").append(newDivz);
+		
+	newDivz.html($(this).html() + " december");
 
     function Stuffhappens(obj) {
 		
-        // prepare canvas
-        $(obj).html("<canvas id='canvas'>Canvas is not supported in your browser.</canvas>");
-        // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
-        // not supported in all browsers though and sometimes needs a prefix, so we need a shim
-        window.requestAnimFrame = (function () {
-            return window.requestAnimationFrame ||
-                window.webkitRequestAnimationFrame ||
-                window.mozRequestAnimationFrame ||
-                function (callback) {
-                    window.setTimeout(callback, 1000 / 60);
-                };
-        })();
-
-
-        document.getElementById("dialog").innerHTML= "<p class='godjulwesteann'>GOD JUL!</p>" +
-    "<div id='landscape_picture' style='position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-image: url(http://localhost:63342/Jul-Kalender/assets/pictures/christmas-cookies.jpg); background-position: 50% 50%; background-size: cover; background-repeat: no-repeat;'></div>"
+    document.getElementById("dialog").innerHTML= "<p class='godjulwesteann'>GOD JUL!</p>" + 
+    "<div id='landscape_picture' style='position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background-image: url(assets/pictures/christmas-cookies.jpg); background-position: 00% 50%; background-size: cover; background-repeat: no-repeat;'></div>"
 	  
     }
 
+	
 	
 }
