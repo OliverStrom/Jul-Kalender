@@ -1,42 +1,58 @@
 
+ 
+
 function backstjo_main() {
-    //alert($(this).html());
-
-    // skapa new DIV med klass "closable"
-    var newDiv = $("<div>").attr("class", "closable");
-    // lägg till den nya DIVen till kontainern
-    $("#container").append(newDiv);
-    // formatera
-    newDiv.css({
-        position: "absolute",
-        top: "100px",
-        left: "300px",
-        maxWidth: "2000px",
-        width: "50%",
-        height: "100%",
-        color: "black",
-        padding: "20px",
-        backgroundImage: 'url("assets/pictures/HOL.jpg")',
-        backgroundRepeat: "no-repeat"
-    });
-
-    // fylla på innehållet
-    newDiv.html();
-    newDiv.append("<p class='backstjo-text'>Merry virtual christmas!</p>");
-
-    function closeDiv() {
-        $(".closable").remove();
+    
+    function run() {
+        var image = document.getElementById('background');
+        image.onload = function() {
+            console.log(this);
+            var engine = new RainyDay({
+                image: this,
+                parentElement: document.getElementById('daniel'),
+                top: 0,
+                left: 0
+            });
+            engine.rain([ [1, 2, 210] ]);
+            engine.rain([ [2, 2, 0.24], [4, 3, 0.6], [2, 1, 1] ], 10);
+        };
+        image.crossOrigin = 'anonymous';
+        image.src = 'assets/pictures/HOL.jpg';
     }
 
-    // koppla till avstägningsfunktion
-    $("body").keydown(function (e) {
-        if (e.which === 27)closeDiv();
-    });
 
-    // skapa avstägningsknapp
-    newDiv.append($("<div>").attr("id", "close").html("X").click(closeDiv));
+    function getDivStructure(){
+        return $('<div>')
+            .css({
+                opacity:"0"
+            })
+            .animate({
+                opacity:"1"
+            }, 400)
+            .append($('<div id="daniel">')
+                .append($('<img id="background"  alt="background" src="" crossorigin="anonymous">')
+                    .css({
+                        left: "0px",
+                        top: "0px",
+                        position: "absolute",
+                        height:"460",
+                        width:"600"
+                    })))
+            .append($('<div>')
+                .append("<p class='backstjo-text'>Merry virtual christmas!</p>")
+            )
+    }
+    $(this)
+        .parent()
+        .append(
+            window.ClosableDiv.init(getDivStructure())
+                .css({
+                    height:"420",
+                    width:"520",
+                    backgroundColor:"rgba(0, 0, 50, 0.1)"
+                })
+        );
 
-    
-    
+    run();
     
 }

@@ -1,7 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Erica+One);
 
-p.backstjo-text{
+div p.backstjo-text{
+	position: absolute;
+	z-index: 1111;
 	font-size: 56px;
 	color: #fff;
-	font-family: 'Erica One', cursive;
+	font-family: 'Erica One', cursive;	
+	color:"rgba(255, 255, 255, 0.8)",
+	textShadow: "0 0 14px #000"
 }
