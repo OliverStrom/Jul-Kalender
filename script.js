@@ -23,10 +23,6 @@ $(document).ready(function () {
         "stromjoe",
         "stromoli",
         "westeann",
-<<<<<<< HEAD
-=======
-        "westeann_2",
->>>>>>> origin/master
         "persona_1",
         "persona_2",
         "persona_3",
