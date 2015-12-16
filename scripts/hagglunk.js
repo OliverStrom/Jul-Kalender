@@ -1,4 +1,3 @@
-
 function hagglunk_main() {
     //alert($(this).html());
 
